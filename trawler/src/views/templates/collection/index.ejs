@@ -1,0 +1,8 @@
+<div class="collection-wrap">
+    <div class="collection-list">
+        <% for(let i = 0; i < collections.length; i++){ const collection = collections[i]; %> 
+            <%-include('../common/mainTitle/index.ejs',{ headTitle: collection.title,isMore:false}) %> 
+            <%-include('./item.ejs',{collection,IMG_BASE_URL}) %> 
+        <% }%>
+    </div>
+</div>

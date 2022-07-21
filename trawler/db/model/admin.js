@@ -21,5 +21,5 @@ const Admin = seq.define(
     }
 );
 
-Admin.sync();
+// Admin.sync();
 module.exports = Admin;

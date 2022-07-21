@@ -1,0 +1,10 @@
+<div class="carousel-wrap J_carousel_wrap">
+    <div class="carousel-list J_carousel_list clearfix">
+        <% for(let i = 0; i < carousels.length; i ++ ) { var carouselItem = carousels[i] %>
+            <%- include('item.ejs',{
+                carousel:carouselItem, i,IMG_BASE_URL })%>
+            <% }%>
+    </div>
+    <%- include('./indicator.ejs',{ carouseLen: carousels.length}) %>
+    <%- include('./director.ejs') %>
+</div>

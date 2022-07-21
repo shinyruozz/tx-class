@@ -1,0 +1,7 @@
+<div class="nav-tabs">
+    <% for (let i = 0; i < tabDatas.length; i++) { let item = tabDatas[i]; %>
+        <div class="tab-item" data-field="<%= item.id%>">
+            <%= item.title%>
+        </div>
+    <% }%>
+</div>

@@ -1,0 +1,9 @@
+<div class="agency-tab-wrap">
+    <ul class="agency-list clearfix">
+        <% for(let i = 0; i < agencyTabs.length; i ++){ const item = agencyTabs[i]; %>
+            <li class="agency-item<%= !i ? ' current' :''%>" data-field="<%= item.field%>">
+                <%= item.title%>
+            </li>
+        <% }%>
+    </ul>
+</div>

@@ -1,8 +1,8 @@
 <template>
   <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
-    <el-menu :default-openeds="['0']" :default-active="$router.path" router>
+    <el-menu :default-openeds="['0']" :default-active="$router.path" router :unique-opened="true">
       <template v-for="menu of menusData">
-        <el-submenu v-if="menu.children" :key="menu.field" :index="menu.path">
+        <el-submenu v-if="menu.children" :key="menu.field" :index="menu.field">
           <template slot="title">{{menu.title}}</template>
           <el-menu-item
             v-for="menuChild of menu.children"

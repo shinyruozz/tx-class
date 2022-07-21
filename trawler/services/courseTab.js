@@ -24,6 +24,19 @@ class CourseTabService {
         });
     }
 
+    //获取上线课程分类
+    async getStateOnlineCourseTab() {
+        return await courseTabModel.findAll({
+            raw: true,
+            where: {
+                state: 1,
+            },
+            attributes: {
+                exclude: ["createdAt", "updatedAt"],
+            },
+        });
+    }
+
     async findIdCourseTab(id) {
         return await courseTabModel.findOne({
             where: { id },

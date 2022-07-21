@@ -13,7 +13,7 @@
       </el-table-column>
       <el-table-column label="操作" align="center">
         <template v-slot="{row}">
-          <el-button type="warning" @click="changeState(row)">{{row.state == 1 ? '设置为':'取消'}}优秀学生</el-button>
+          <el-button type="warning" @click="changeState(row)">{{row.state == 1 ? '取消':'设置为'}}优秀学生</el-button>
         </template>
       </el-table-column>
     </el-table>

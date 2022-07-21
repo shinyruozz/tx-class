@@ -1,0 +1,24 @@
+<div class="collection-item">
+    <div class="collection-mark">
+        <div class="mark-img-wrap">
+
+            <img src="<%= IMG_BASE_URL + collection.maskKey %> " alt="" />
+        </div>
+        <div class="mark-info">
+            <%= collection.info%>
+        </div>
+        <a href="<%= collection.qqQunLink  %> " >
+            加群
+        </a>
+    </div>
+    <div class="course-list">
+        
+        <% for(let i = 0; i < collection.courseDatas.length; i ++){
+            const item = collection.courseDatas[i]; 
+        %> 
+
+            <%- include('../common/course/item.ejs',{ IMG_BASE_URL, item})%>
+           
+        <% }%>
+    </div>
+</div>

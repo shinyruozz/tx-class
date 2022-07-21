@@ -1,0 +1,23 @@
+.main-about {
+    margin: 30px 0 150px;
+    .poster-wrap {
+        height: 400px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .agency-intro-wrap {
+        margin-top: 40px;
+        color: #333;
+        .agency-name {
+            font-size: 22px;
+            text-align: center;
+        }
+        .agency-intro {
+            font-size: 16px;
+            margin-top: 30px;
+            text-align: center;
+        }
+    }
+}

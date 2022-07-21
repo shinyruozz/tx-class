@@ -1,0 +1,20 @@
+<div class="person-item">
+    <div class="avatar">
+        <img src="<%= IMG_BASE_URL + item.imgKey %> " alt="" />
+    </div>
+    <div class="person-right">
+        <a class="teac-tt-lk" href="<%= item.href %> ">
+            <h4 class="teac-tt">
+                <%= item.teacherName %>
+            </h4>
+        </a>
+        <div class="teac-info">
+            <span class="course-count">课程<%= item.courseCount %> </span>
+            <i class="separate"></i>
+            <span class="student-count">学生 <%= item.studentCount %> </span>
+        </div>
+        <div class="teac-desc" title="<%= item.intro %>">
+            <%= item.intro %>
+        </div>
+    </div>
+</div>

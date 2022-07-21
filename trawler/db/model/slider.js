@@ -41,6 +41,6 @@ const Slider = seq.define(
     }
 );
 
-Slider.sync();
+// Slider.sync();
 
 module.exports = Slider;

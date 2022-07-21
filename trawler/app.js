@@ -16,6 +16,7 @@ const { sessionInfo, cookiesInfo, redisInfo } = require("./config/conf");
 const crawlerRouter = require("./routes/crawler");
 const indexRouter = require("./routes/index.js");
 const adminRouter = require("./routes/admin.js");
+const pcRouter = require("./routes/pc");
 // error handler
 onerror(app);
 
@@ -62,7 +63,7 @@ app.use(require("koa-static")(__dirname + "/public"));
 app.use(require("koa-static")(__dirname + "/upload"));
 
 app.use(
-    views(__dirname + "/views", {
+    views(__dirname + "/src/views", {
         extension: "ejs",
     })
 );
@@ -79,6 +80,7 @@ app.use(async(ctx, next) => {
 app.use(crawlerRouter.routes(), crawlerRouter.allowedMethods());
 app.use(indexRouter.routes(), indexRouter.allowedMethods());
 app.use(adminRouter.routes(), adminRouter.allowedMethods());
+app.use(pcRouter.routes(), pcRouter.allowedMethods());
 
 // error-handling
 app.on("error", (err, ctx) => {

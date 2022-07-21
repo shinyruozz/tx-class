@@ -1,0 +1,38 @@
+<div class="recom-course-wrap">
+    <ul class="recom-course-list">
+        <% for(let i = 0; i < recomCourses.length; i++) { const item = recomCourses[i] %>
+            <li class="recom-course-item">
+                <div class="course-cover">
+                    <a href="<%= item.href%>">
+                    <img src="<%= IMG_BASE_URL + item.posterKey%>" alt="" class="course-img" />
+                </a>
+                </div>
+                <div class="course-info">
+                    <a href="https://ke.qq.com/course/334138">
+                        <h4 class="course-tt">
+                            <%= item.title%>
+                        </h4>
+                    </a>
+                    <div class="course-desc-wrap">
+                        <p class="course-desc">
+                            <%= item.description%>
+                        </p>
+
+                        <div class="course-face">
+                            <div class="course-tear">
+                                <img src="<%= IMG_BASE_URL+item.tearcherKey%>" alt="" />
+                            </div>
+                            <span class="tear-name"> <%= item.tearcherName%> </span>
+                            <i class="separate"></i>
+                            <span class="buy-count"> <%= item.studentCount%>购买 </span>
+                        </div>
+                    </div>
+                    <p class="price">￥
+                        <%= item.price%>
+                    </p>
+                    <button class="join-button">立即报名</button>
+                </div>
+            </li>
+            <% }%>
+    </ul>
+</div>

@@ -1,7 +1,7 @@
 <template>
   <div class="table-container">
     <refresh @refreshClick="refreshHandle"></refresh>
-    <el-table :data="currentData" border stripe height="90%">
+    <el-table :data="currentData" border stripe height="85%" ref="table">
       <el-table-column prop="cid" label="课程ID" align="center" width="150px"></el-table-column>
       <el-table-column prop="title" label="课程标题" align="center" width="450px"></el-table-column>
 
@@ -87,7 +87,6 @@ export default {
     async getCourseData(isRefresh = false) {
       const { pageNum } = this.queryInfo;
       if (!this.courseData[pageNum] && !isRefresh) {
-        console.log();
         const { code, list, total } = await courseService.getCourseData(
           this.queryInfo
         );
@@ -123,9 +122,16 @@ export default {
       this.courseTabData = result;
     },
     //改变当前页码
-    currentPageChange(page) {
+    async currentPageChange(page) {
       this.queryInfo.pageNum = page;
-      this.getCourseData();
+      await this.getCourseData();
+
+      //处理表格高度问题
+      this.$nextTick(() => {
+        setTimeout(() => {
+          this.$refs.table.doLayout();
+        }, 30);
+      });
     },
     // 切换课程状态
     async toggleState(info) {

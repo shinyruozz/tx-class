@@ -12,7 +12,7 @@ crawler({
             const $elem = $(ele);
             let dataItem = {
                 cid: index + 1,
-                title: $elem.find(".recommend-course-title span").text().replace(/\s/g, ""),
+                title: $elem.find(".recommend-course-title span").get(0).firstChild.nodeValue,
                 info: $elem.find(".rec-group-info").text(),
                 qqQunLink: $elem.find(".rec-group-join").prop("href"),
                 maskUrl: $elem

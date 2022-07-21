@@ -57,9 +57,9 @@ export default {
           const { code, data, msg } = await loginService.loginAction(
             this.loginInfo
           );
-
+          console.log(code, data, msg);
           if (code == 0) {
-            this.$router.push("/");
+            this.$router.push("/course/list");
             this.$message({
               message: "登录成功",
               type: "success",

@@ -32,6 +32,11 @@ const Teacher = seq.define("Teacher", {
     imgKey: {
         type: STRING,
     },
+
+    isStar: {
+        type: INT,
+        defaultValue: 1,
+    },
     state: {
         type: INT,
 

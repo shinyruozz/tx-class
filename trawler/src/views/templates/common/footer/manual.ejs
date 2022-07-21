@@ -1,0 +1,16 @@
+<div class="manual-wrap">
+    <div class="manual-list clearfix">
+        <% for (let i = 0; i < manualDatas.length; i++) {
+            const item = manualDatas[i];
+         %> 
+            <div class="manual-item">
+                <a  class='item-lk'
+                    href="<%= item.link%>" 
+                    title="<%= item.title%>"
+                    style="background:url(<%= item.logoUrl%>) no-repeat  <%= item.bgPosition%>;"
+                >
+                </a>
+            </div>
+        <% }  %> 
+    </div>
+</div>

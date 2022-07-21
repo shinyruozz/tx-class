@@ -1,0 +1,9 @@
+<div class="student-wrap">
+    <%-include('../common/mainTitle/index.ejs',{ headTitle:"JS++优秀学生", isMore:false })%>
+
+    <div class="student-list clearfix">
+        <% for (let i = 0; i < students.length; i++) { const item = students[i]; %> 
+            <%- include('item.ejs',{ item,IMG_BASE_URL })%> 
+        <% } %>
+    </div>
+</div>

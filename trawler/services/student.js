@@ -17,19 +17,27 @@ class StudentService {
     }
 
     async findStudents(pageNum = 1, pageSize = 10) {
-        const limit = Number(pageSize);
-        const offset = (pageNum - 1) * pageSize;
-        const { count: total, rows } = await studentModel.findAndCountAll({
-            offset,
-            limit,
-            attributes: {
-                exclude: ["createdAt", "updatedAt"],
-            },
+            const limit = Number(pageSize);
+            const offset = (pageNum - 1) * pageSize;
+            const { count: total, rows } = await studentModel.findAndCountAll({
+                offset,
+                limit,
+                attributes: {
+                    exclude: ["createdAt", "updatedAt"],
+                },
+            });
+            return {
+                total,
+                list: rows,
+            };
+        }
+        //获取 优秀学生
+    async getByStateStudent() {
+        return await studentModel.findAll({
+            raw: true,
+            where: { state: 1 },
+            attributes: { exclude: ["createdAt", "updatedAt", "sid"] },
         });
-        return {
-            total,
-            list: rows,
-        };
     }
 
     async updateStudent(id, state) {

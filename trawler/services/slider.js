@@ -18,6 +18,16 @@ class SliderService {
         });
     }
 
+    async getSliderDatas() {
+        return await SliderModel.findAll({
+            raw: true,
+
+            where: {
+                state: 1,
+            },
+        });
+    }
+
     async findIdSlider(id) {
         return await SliderModel.findByPk(id, {
             attributes: {

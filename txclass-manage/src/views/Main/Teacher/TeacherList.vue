@@ -15,7 +15,7 @@
       </el-table-column>
       <el-table-column label="操作" align="center">
         <template v-slot="{row}">
-          <el-button type="warning" @click="setHotTeacher(row)">{{row.state ==1? '设为' : '下线'}}明星老师</el-button>
+          <el-button type="warning" @click="setHotTeacher(row)">{{row.isStar == 1? '下线' : '上线'}}明星老师</el-button>
           <el-button type="primary" @click="editHandle(row.id)">编辑</el-button>
           <el-button type="danger" @click="removeHandle(row)">删除</el-button>
         </template>
@@ -72,9 +72,9 @@ export default {
       this.$router.push("/teacher/edit/" + data.id);
     },
     async setHotTeacher(item) {
-      item.state = item.state == 1 ? 0 : 1;
+      item.isStar = item.isStar == 1 ? 0 : 1;
       const { code } = await teacherService.editTeacherInfo(item.id, {
-        state: item.state,
+        isStar: item.isStar,
       });
       showMessage(code, "设置成功");
     },

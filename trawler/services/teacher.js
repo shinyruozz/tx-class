@@ -27,6 +27,15 @@ class TeacherService {
         });
     }
 
+    //获取明星老师
+    async getByStarTeacher() {
+        return await teacherModel.findAll({
+            raw: true,
+            where: { isStar: 1 },
+            attributes: { exclude: ["createdAt", "updatedAt", "cid"] },
+        });
+    }
+
     async updateTeacher(id, data) {
         const res = await teacherModel.update(data, {
             where: {

@@ -1,0 +1,10 @@
+<nav class="nav-list clearfix">
+    <% for(let i = 0; i < NAVDATAS.length; i++) { let item = NAVDATAS[i] %>
+        <div class="nav-item">
+            <a href="<%= item.link  %> " class="nav-lk">
+                <%= item.title %>
+                    <i class="iconfont icon-arrow-right"></i>
+            </a>
+        </div>
+        <% } %>
+</nav>

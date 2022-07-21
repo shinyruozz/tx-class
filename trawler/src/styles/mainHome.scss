@@ -1,0 +1,223 @@
+@import './variable.scss';
+.recom-course-wrap {
+    margin-bottom: 10px;
+    .recom-course-list {
+        position: relative;
+        li.recom-course-item {
+            height: 260px;
+            .course-cover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 460px;
+                height: 100%;
+                .course-img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .course-info {
+                box-sizing: border-box;
+                padding-left: 480px;
+                width: 100%;
+                height: 100%;
+                background-color: #f0f0f0;
+                .course-tt {
+                    font-size: 18px;
+                    color: #333;
+                    padding: 20px 0;
+                }
+                .course-desc-wrap {
+                    color: #666;
+                    .course-desc {
+                        font-size: 14px;
+                    }
+                    .course-face {
+                        display: flex;
+                        align-items: center;
+                        padding: 10px 0;
+                        font-size: 14px;
+                        .course-tear {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            overflow: hidden;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .tear-name {
+                            padding-left: 15px;
+                        }
+                        .separate {
+                            width: 1px;
+                            height: 14px;
+                            background-color: #ccc;
+                            margin: 0 20px;
+                        }
+                    }
+                }
+                .price {
+                    padding-top: 25px;
+                    font-size: 22px;
+                    color: #fe9455;
+                }
+                .join-button {
+                    width: 170px;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    font-size: 20px;
+                    color: #fff;
+                    background-color: $defaultColor;
+                    margin-top: 10px;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $defaultHoverColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//课程集合
+.collection-wrap {
+    .collection-item {
+        position: relative;
+        height: 220px;
+        .collection-mark {
+            position: relative;
+            top: 10px;
+            left: 0;
+            float: left;
+            width: 220px;
+            height: 200px;
+            .mark-img-wrap {
+                height: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .mark-info {
+                position: absolute;
+                top: 20px;
+                width: 100%;
+                padding: 0 20px;
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            a {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                width: 124px;
+                height: 40px;
+                border: 1px solid #fff;
+                margin-left: -62px;
+                line-height: 40px;
+                text-align: center;
+                color: #fff;
+            }
+        }
+        //课程
+        .course-list {
+            float: left;
+            height: 200px;
+        }
+    }
+}
+
+// 教师和学生公共的样式
+.person-item {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 175px;
+    .avatar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 120px;
+        img {
+            width: 100%;
+            height: 100%;
+            box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.8);
+            overflow: hidden;
+            border-radius: 50%;
+            // z-index: 2;
+        }
+        // background: url() no-repeat ;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -47px;
+            width: 0;
+            height: 0;
+            border: 30px solid transparent;
+            border-left-color: $successBdColor;
+            z-index: -1;
+        }
+    }
+    .person-right {
+        padding: 0 45px 0 150px;
+    }
+}
+
+//老师
+.teacher-wrap {
+    padding-top: 15px;
+    .person-right {
+        a {
+            display: block;
+            .teac-tt {
+                font-size: 20px;
+                color: #262626;
+            }
+        }
+        .teac-info {
+            color: #777;
+            font-size: 14px;
+            padding: 10px 0;
+            .separate {
+                display: inline-block;
+                width: 1px;
+                height: 14px;
+                background-color: #777;
+                margin: 0 20px;
+            }
+        }
+        .teac-desc {
+            height: 63px;
+            color: #262626;
+            overflow: hidden;
+            line-height: 21px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+.student-wrap {
+    .student-tt {
+        font-size: 20px;
+        color: #262626;
+    }
+    .student-post {
+        font-size: 16px;
+        color: #262626;
+        padding: 10px 0 25px;
+    }
+    .student-course {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

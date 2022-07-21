@@ -23,6 +23,7 @@ class AdminController {
     }
 
     async loginAction(ctx, next) {
+            console.log(454678797);
             let { username, password } = ctx.request.body;
 
             username = trimSpace(username);
@@ -50,7 +51,7 @@ class AdminController {
 
             //登录成功
             ctx.session.userInfo = res.data;
-
+            console.log(ctx.session);
             ctx.body = {
                 code: 0,
                 msg: "登录成功",

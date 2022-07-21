@@ -1,0 +1,15 @@
+<%- include('./layout/head.ejs',{ HEAD:PAGE_CONF.HEAD, STYLESHEET:PAGE_CONF.STYLESHEET })%>
+
+<div class="container">
+    <!-- 头部 -->
+    <%- include('./templates/common/header/index.ejs',{ NAVDATAS: navDatas } ) %>
+    <!-- 轮播图 -->
+    <%-include('./templates/common/carousel/index.ejs',{ NAVDATAS: carousels,IMG_BASE_URL } ) %>
+    <div class="main">
+        <%-include('./templates/main/list/index.ejs',{ courseDatas, IMG_BASE_URL})%>
+    </div>
+
+    <%- include('./templates/common/footer/index.ejs',{ manualDatas,linkDatas,IMG_BASE_URL } ) %>
+</div>
+
+<%-include('./layout/foot.ejs',{ SCRIPTS:PAGE_CONF.SCRIPTS, IMG_BASE_URL})%>

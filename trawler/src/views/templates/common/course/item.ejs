@@ -1,0 +1,18 @@
+<div class="course-item">
+    <div class="course-img-wrap">
+        <a href="<%= item.href %>" class="course-lk">
+            <img src="<%= IMG_BASE_URL + item.posterKey%>" alt="" />
+        </a>
+    </div>
+    <div class="course-info">
+        <p class="course-tt">
+            <a href="<%= item.href %>" class="course-lk">
+                <%= item.title %>
+            </a>
+        </p>
+    </div>
+    <div class="course-other">
+        <span class="price"> <%= item.price==0 ? '免费': item.price%> </span>
+        <span class="apply-count"> <%= item.studentCount %>人报名 </span>
+    </div>
+</div>

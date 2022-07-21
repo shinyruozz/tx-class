@@ -1,0 +1,140 @@
+@import './variable.scss';
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.div {
+    box-sizing: border-box;
+}
+
+.no-data-tip {
+    width: 100%;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    font-size: 26px;
+    color: #777;
+}
+
+//header
+.header {
+    position: relative;
+    min-width: 1200px;
+    height: 72px;
+    border-bottom: 1px solid #ccc;
+    padding: 0 15px;
+    .img-wrap {
+        float: left;
+        width: 288px;
+        height: 100%;
+        .logo {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url('../img/logo.png') no-repeat 100%/100%;
+        }
+    }
+    .nav-list {
+        float: left;
+        height: 100%;
+        line-height: 72px;
+        margin-left: 50px;
+        .nav-item {
+            float: left;
+            margin-left: 15px;
+            &:hover .nav-lk {
+                color: $defaultHoverColor;
+            }
+            &.current {
+                color: $defaultHoverColor;
+            }
+        }
+    }
+    .search-wrap {
+        position: absolute;
+        top: 0;
+        right: 50px;
+        width: 260px;
+        height: 100%;
+        .search-input {
+            position: absolute;
+            top: 16px;
+            left: 0;
+            width: 200px;
+            height: 40px;
+            text-indent: 10px;
+            border: 1px solid $defaultColor;
+        }
+        .search-btn {
+            position: absolute;
+            top: 16px;
+            right: 0;
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            background-color: $defaultColor;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
+}
+
+//footer
+.footer {
+    position: relative;
+    padding: 30px 0;
+    background-color: #444547;
+    height: 370px;
+    .manual-wrap {
+        position: absolute;
+        left: 25%;
+        width: 350px;
+        .manual-item {
+            float: left;
+            width: 50%;
+            margin-bottom: 15px;
+            .item-lk {
+                display: block;
+                width: 156px;
+                height: 60px;
+            }
+        }
+    }
+    .link-wrap {
+        position: absolute;
+        left: 60%;
+        width: 150px;
+        .link-item {
+            margin-bottom: 15px;
+            .item-tt {
+                text-align: center;
+                font-size: 18px;
+                color: #ccc;
+                margin-bottom: 10px;
+            }
+            .item-lk {
+                display: block;
+                width: 55px;
+                height: 55px;
+                margin: 0 auto;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        line-height: 35px;
+        p {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+        }
+    }
+}

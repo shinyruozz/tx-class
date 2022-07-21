@@ -1,0 +1,17 @@
+@import './variable.scss';
+.nav-tabs {
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #ddd;
+    background-color: #f5f5f5;
+    .tab-item {
+        float: left;
+        padding-left: 30px;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+        &.current {
+            color: $infoHoverBdColor;
+        }
+    }
+}

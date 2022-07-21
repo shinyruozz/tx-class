@@ -1,0 +1,7 @@
+<div class="teacher-wrap">
+        <div class="teacher-list clearfix">
+            <% for (let i = 0; i < teachers.length; i++) { const item = teachers[i]; %>
+                <%-include('./item.ejs',{item,IMG_BASE_URL})%>
+            <% } %>
+        </div>
+</div>

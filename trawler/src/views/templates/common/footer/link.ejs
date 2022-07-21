@@ -1,0 +1,12 @@
+<div class="link-wrap">
+    <div class="link-list">
+        <% for (let i = 0; i < linkDatas.length; i++) { const item = linkDatas[i]; %>
+        <div class="link-item">
+            <h3 class="item-tt"><%= item.title%></h3>
+            <a href="<%= item.link%>" title="<%= item.title%>" class="item-lk">
+                <img src="<%= item.logoUrl%>" alt="" />
+            </a>
+        </div>
+        <% }%>
+    </div>
+</div>

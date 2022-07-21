@@ -1,4 +1,5 @@
 const courseModel = require("../db/model/course");
+const { Op } = require("sequelize");
 class CourseService {
     async createCourse(data) {
         const cid = data.cid;
@@ -27,6 +28,37 @@ class CourseService {
             total,
             list: rows,
         };
+    }
+
+    // cid 查找课程
+    async getByCidFindCourse(idList) {
+        return await courseModel.findAll({
+            raw: true,
+            where: { cid: idList },
+            attributes: { exclude: ["createdAt", "updatedAt"] },
+        });
+    }
+
+    // 获取上线课程
+    async getStateOnlineCourse() {
+        return await courseModel.findAll({
+            raw: true,
+            where: {
+                state: 1,
+            },
+            attributes: { exclude: ["createdAt", "updatedAt", "state"] },
+        });
+    }
+
+    async getFuzzySearch(query) {
+        return await courseModel.findAll({
+            raw: true,
+            where: {
+                title: {
+                    [Op.like]: "%" + query + "%",
+                },
+            },
+        });
     }
 
     async findCourse(id) {

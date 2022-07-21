@@ -6,6 +6,9 @@
         <el-form-item label="课程标题">
           <el-input v-model="courseData.title"></el-input>
         </el-form-item>
+        <el-form-item label="课程链接">
+          <el-input v-model="courseData.href"></el-input>
+        </el-form-item>
         <el-form-item label="课程分类">
           <el-select v-model="courseData.field" placeholder="请选择活动区域">
             <el-option
@@ -124,10 +127,8 @@ export default {
 
     async addCourse() {
       console.log(this.courseData);
-      const res = await courseService.addCourse(this.courseData);
-      console.log(res);
-      // if()
-      // console.log(this.courseData);
+      const { code, msg } = await courseService.addCourse(this.courseData);
+      showMessage(code, msg);
     },
   },
 };

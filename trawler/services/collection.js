@@ -1,4 +1,5 @@
 const collectionModel = require("../db/model/collection");
+const { getByCidFindCourse } = require("./course");
 class CollectionService {
     async createCollection(data) {
         const cid = data.cid;
@@ -14,10 +15,29 @@ class CollectionService {
     }
 
     async findCollections() {
-        return await collectionModel.findAll({
+            return await collectionModel.findAll({
+                attributes: {
+                    exclude: ["createdAt", "updatedAt"],
+                },
+            });
+        }
+        //获取status 为1 上线的集合
+    async findStatusOnlineCollec() {
+        let result = await collectionModel.findAll({
+            raw: true,
             attributes: {
-                exclude: ["createdAt", "updatedAt"],
+                exclude: ["createdAt", "updatedAt", "cid"],
+                where: {
+                    status: 1,
+                },
             },
+        });
+        return result.map(async(item) => {
+            item.courseIdList = item.courseIdList.split(",");
+
+            item.courseDatas = await getByCidFindCourse(item.courseIdList);
+
+            return item;
         });
     }
 

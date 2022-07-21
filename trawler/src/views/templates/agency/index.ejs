@@ -1,0 +1,17 @@
+<div class="agency-wrap">
+    <div class="logo-wrap">
+        <img src="<%= IMG_BASE_URL+agencyInfo.logoKey%>" alt="" />
+    </div>
+    <div class="agency-intro">
+        <a class="agency-tt" href="javascript:;">
+            <%= agencyInfo.name %>
+        </a>
+        <div class="agency-info">
+            <span class="ag-info-item"> 好评度<%= agencyInfo.feedbackRate %>%</span>
+            <span class="ag-info-item"> 学生数<%= agencyInfo.studentCount %> </span>
+            <span class="ag-info-item last"> 好评度<%= agencyInfo.description %> </span>
+        </div>
+        <!-- 机构tab -->
+    </div>
+    <%- include('./tab.ejs', {agencyTabs}) %>
+</div>

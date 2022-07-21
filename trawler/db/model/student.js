@@ -25,6 +25,9 @@ const Student = seq.define("Student", {
     imgKey: {
         type: STRING,
     },
+    course: {
+        type: STRING,
+    },
     state: {
         type: INT,
         defaultValue: 1,

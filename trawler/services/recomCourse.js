@@ -15,6 +15,7 @@ class RecomCourseService {
 
     async findRecomCourses() {
         return await RecomCourseModel.findAll({
+            raw: true,
             attributes: {
                 exclude: ["createdAt", "updatedAt"],
             },

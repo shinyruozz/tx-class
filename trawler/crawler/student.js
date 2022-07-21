@@ -17,6 +17,7 @@ crawler({
                 studentImg: $face.find(".stu-img").prop("src"),
                 intro: $el.find(".stu-main-cnt ").text().replace(/\s/g, ""),
                 courseLink: $el.find(".stu-main-tit").prop("href"),
+                course: $el.find(".stu-main-tit").prop("title"),
                 imgKey: "",
             };
             data.push(dataItem);

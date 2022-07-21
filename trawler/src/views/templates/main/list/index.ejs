@@ -1,0 +1,12 @@
+<div class="course-list J_courseList clearfix">
+    <% if(courseDatas && courseDatas.length > 0) {%> 
+        <% for (let i = 0; i < courseDatas.length; i++) {
+            const item = courseDatas[i];
+        %> 
+            <%- include('../../common/course/item.ejs',{item,IMG_BASE_URL})%>
+    
+    <% } %> 
+    <% }else{%> 
+            <%- include('../../common/noDataTip/index.ejs',{tipText:'搜索不到该数据'})%>
+    <% } %> 
+</div>
