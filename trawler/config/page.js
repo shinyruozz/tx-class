@@ -2,7 +2,7 @@ const { isENV } = require("./env.config");
 
 const URL = {
     //  webpack-dev-server 用 3300
-    SOURCE: isENV ? "http://localhost:3300/" : "xxx",
+    SOURCE: isENV ? "http://localhost:3000/" : "xxx",
 };
 
 const pages = {

@@ -1,0 +1,23 @@
+{
+  "id": "3542832",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "122688",
+      "name": "back",
+      "font_class": "back",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
+      "icon_id": "1046066",
+      "name": "双列列表",
+      "font_class": "list",
+      "unicode": "e6e5",
+      "unicode_decimal": 59109
+    }
+  ]
+}

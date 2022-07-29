@@ -1,10 +1,11 @@
 const Koa = require("koa");
+
 const app = new Koa();
 const path = require("path");
 const views = require("koa-views");
 const json = require("koa-json");
 const onerror = require("koa-onerror");
-const bodyparser = require("koa-bodyparser");
+
 const koaBody = require("koa-body");
 const logger = require("koa-logger");
 const sesstion = require("koa-generic-session");
@@ -13,10 +14,11 @@ const cors = require("koa-cors");
 
 const { sessionInfo, cookiesInfo, redisInfo } = require("./config/conf");
 
-const crawlerRouter = require("./routes/crawler");
-const indexRouter = require("./routes/index.js");
-const adminRouter = require("./routes/admin.js");
-const pcRouter = require("./routes/pc");
+// const crawlerRouter = require("./routes/crawler");
+// const indexRouter = require("./routes/index.js");
+// const adminRouter = require("./routes/admin.js");
+// const pcRouter = require("./routes/pc");
+const appRouter = require("./routes/index");
 // error handler
 onerror(app);
 
@@ -57,6 +59,7 @@ app.use(
         parsedMethods: ["POST", "PUT", "PATCH", "DELETE", "GET"],
     })
 );
+
 app.use(json());
 app.use(logger());
 app.use(require("koa-static")(__dirname + "/public"));
@@ -77,10 +80,11 @@ app.use(async(ctx, next) => {
 });
 
 // routes
-app.use(crawlerRouter.routes(), crawlerRouter.allowedMethods());
-app.use(indexRouter.routes(), indexRouter.allowedMethods());
-app.use(adminRouter.routes(), adminRouter.allowedMethods());
-app.use(pcRouter.routes(), pcRouter.allowedMethods());
+// app.use(crawlerRouter.routes(), crawlerRouter.allowedMethods());
+// app.use(indexRouter.routes(), indexRouter.allowedMethods());
+// app.use(adminRouter.routes(), adminRouter.allowedMethods());
+// app.use(pcRouter.routes(), pcRouter.allowedMethods());
+appRouter(app);
 
 // error-handling
 app.on("error", (err, ctx) => {

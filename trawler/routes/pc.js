@@ -7,6 +7,7 @@ const router = new Router();
 
 router.get("/", index);
 router.get("/list/:kw?", list);
+
 router.get("*", error);
 
 module.exports = router;

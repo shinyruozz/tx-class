@@ -7,8 +7,8 @@
         "dev": " nodemon bin/www",
         "prd": "pm2 start bin/www",
         "webpack": "webpack-dev-server",
-        "build": "webpack",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "webpack"
+
     },
     "dependencies": {
         "debug": "^4.1.1",

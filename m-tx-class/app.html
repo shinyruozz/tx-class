@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+
+<head {{ HEAD_ATTRS }}>
+    {{ HEAD }}
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            document.documentElement.style.fontSize =
+                document.documentElement.clientWidth / 37.5 + "px";
+        });
+        setTimeout(() => {
+            document.body.style.display = "block";
+        }, 500);
+    </script>
+</head>
+
+<body {{ BODY_ATTRS }} style="display: none">
+    {{ APP }}
+</body>
+
+</html>

@@ -1,5 +1,13 @@
-const Router = require("koa-router");
+const adminRouter = require("./admin");
+const crawlerRouter = require("./crawler");
+const mobileRouter = require("./mobile");
+const pcRouter = require("./pc");
 
-const router = new Router();
+function appRouter(app) {
+    app.use(crawlerRouter.routes(), crawlerRouter.allowedMethods());
+    app.use(adminRouter.routes(), adminRouter.allowedMethods());
+    app.use(mobileRouter.routes(), mobileRouter.allowedMethods());
+    app.use(pcRouter.routes(), pcRouter.allowedMethods());
+}
 
-module.exports = router;
+module.exports = appRouter;
